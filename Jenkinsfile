@@ -31,7 +31,7 @@ pipeline {
 	stage('Push Image') {
             steps {
                 script{
-                    docker.withRegistry('https://145988340565.dkr.ecr.us-west-2.amazonaws.com', 'ecr:us-west-2:aws-credentials') {
+                    docker.withRegistry('https://433393113052.dkr.ecr.ap-southeast-1.amazonaws.com', 'ecr:ap-southeast-1:aws-credentials') {
                     app.push("latest")
                     }
                 }
