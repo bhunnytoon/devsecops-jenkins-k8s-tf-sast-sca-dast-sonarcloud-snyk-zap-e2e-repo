@@ -6,7 +6,7 @@ pipeline {
    stages{
     stage('Compile and SAST Scanning') {
             steps {	
-		sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=natee-securityguru -Dsonar.organization=natee-securityguru -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=6a1187bc7577cd315ff682c540405c5ec144dfaa'
+		sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=bhunnytoon -Dsonar.organization=bhunnytoon -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=f478dceb39e2fb62ce2622216a3112a7186cb2e1'
 			}
     }
 
@@ -31,7 +31,7 @@ pipeline {
 	stage('Push Image') {
             steps {
                 script{
-                    docker.withRegistry('https://433393113052.dkr.ecr.ap-southeast-1.amazonaws.com', 'ecr:ap-southeast-1:aws-credentials') {
+                    docker.withRegistry('https://211125298331.dkr.ecr.ap-southeast-1.amazonaws.com', 'ecr:ap-southeast-1:aws-credentials') {
                     app.push("latest")
                     }
                 }
